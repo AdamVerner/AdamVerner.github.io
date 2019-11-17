@@ -1,1 +1,88 @@
-and it workscd AdamVerner.github.io/
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <script src="https://kit.fontawesome.com/yourcode.js"></script>
+  <title>Adam Verner</title>
+
+  <meta name="author" content="Adam Verner">
+  <meta name="description" content="Personal landing page"/>
+
+  <script>
+  function setimage(){
+    var images = ["me_head1.png", "me_head2.png"];
+    var randomName = images[Math.floor(Math.random() * images.length)];
+    document.getElementById('me').src = "static/" + randomName
+  }
+  </script>
+</head>
+
+<body onload="setimage();">
+
+  <div class="wrapper">
+    <header>
+
+      <a href="#">
+        <img id="me">
+      </a>
+
+      <h1>Adam Verner</h1>
+
+      <p>
+        <a href="https://fit.cvut.cz">FIT CTU</a> Student.
+        <br>
+        Software engineer at
+        <a href="https://netio-products.com">NETIO Products</a>.
+      </p>
+
+    </header>
+    <main>
+
+        <h2>About Me</h2>
+        <p>
+          I like to hack things.
+        </p>
+
+        <h2>Social</h2>
+
+        <div class="socials">
+          <div>
+            <img src="static/github_logo_32.png">
+            <a target="_blank" href="https://github.com/AdamVerner">
+            Github
+          </a>
+          </div>
+          <div>
+            <img src="static/linkedin_logo_32.png">
+            <a target="_blank" href="https://www.linkedin.com/in/adam-verner-6a513a14b/">
+            LinkedIn
+            </a>
+          </div>
+          <div>
+            <img src="static/instagram_logo_32.png">
+            <a target="_blank" href="https://www.instagram.com/_averner_/">
+            Instagram
+            </a>
+          </div>
+          <div>
+            <img src="static/ctftime_logo_32.png">
+            <a target="_blank" href="https://ctftime.org/team/65727">
+            CTFtime
+            </a>
+          </div>
+          <div>
+            <img src="static/zoner_logo_32.png">
+            <a target="_blank" href="https://www.zonerama.com/AVerner/742335">
+            Zonerama
+            </a>
+          </div>
+        </div>
+
+    </main>
+  </div>
+
+
+</body>
+</html>
