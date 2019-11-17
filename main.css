@@ -30,9 +30,11 @@ h2, h1, h3{
   margin: 0px;
   width: auto;
   transition: transform .2s;
+  border-style: none;
+  border: 0;
 }
 
-.me:hover{
+#me:hover{
   transform: scale(1.15);
 }
 
@@ -95,3 +97,4 @@ a:hover{
 		padding: 0;
 	}
 }
+
