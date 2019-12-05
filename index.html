@@ -15,6 +15,10 @@
     var images = ["me_head0.png", "me_head1.png", "me_head2.png", "me_head3.png"];
     index = (index + 1) % images.length;
     document.getElementById('me').src = "static/me_head" + index + ".png";
+
+    var audio = new Audio("static/mario_coin.wav");
+    audio.play();
+
   }
 </script>
 </head>
