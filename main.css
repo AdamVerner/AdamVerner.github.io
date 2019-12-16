@@ -14,7 +14,12 @@ html, body {
     color: #b2b2b2;
     font-weight: 500;
     font-size: 1.1em;
+}
 
+/* preload all other images, that will be shown after head-press */
+body::after{
+   position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+   content: url(static/me_head1.png) url(static/me_head2.png) url(static/me_head3.png);
 }
 
 h2, h1, h3{
