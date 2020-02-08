@@ -26,13 +26,13 @@ h2, h1, h3{
   color: #909095;
 }
 
-#me{
-  height: 250px;
+#me{  height: 250px;
   margin: 0px;
   width: auto;
   transition: transform .2s ease-in-out;
   border-style: none;
   border: 0;
+  cursor: pointer;
 }
 
 #me:hover{
@@ -40,8 +40,9 @@ h2, h1, h3{
 }
 
 #me:active{
-  transform: rotate(180deg)
+  animation:rotate .2s linear both;
 }
+@keyframes rotate{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
 
 a {
   text-decoration: none;
