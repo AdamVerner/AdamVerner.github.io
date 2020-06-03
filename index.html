@@ -9,16 +9,45 @@
   <meta name="description" content="Personal landing page"/>
 
   <script>
-  index = 0;
-  function setimage(){
-    var images = ["me_head0.png", "me_head1.png", "me_head2.png", "me_head3.png", "me_head4.png"];
-    index = (index + 1) % images.length;
-    document.getElementById('me').src = "static/me_head" + index + ".png";
+  var index = 0;
+  var images = ["me_head0.png", "me_head1.png", "me_head2.png", "me_head3.png", "me_head4.png"];
 
+  function setimage() {
+    /* based on https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame*/
+
+    /* Play mario sound for cool efect */
     var audio = new Audio("static/mario_coin.wav");
     audio.play();
 
+    var elem = document.getElementById('meRotate');
+    let start, cleared;
+
+    /* in next 3600/7 miliseconds rotate the head 360 degrees
+     * When it's about halfway through, change it for the next one in images
+     * */
+    function step(timestamp) {
+
+      if (start === undefined) start = timestamp;
+      if (cleared === undefined) cleared = false;
+
+      const elapsed = timestamp - start;
+
+      elem.style.transform = "rotate(" + Math.min(0.7 * elapsed, 360) + "deg)"
+
+      if (elapsed < 3600 / 7) { // Stop the animation after 2 seconds
+        window.requestAnimationFrame(step);
+      }
+      if (elapsed > 1800 / 7 && !cleared){
+          cleared = true;
+        index = (index + 1) % images.length;
+        document.getElementById('me').src = "static/" + images[index];
+      }
+    }
+
+    window.requestAnimationFrame(step);
+
   }
+
 </script>
 </head>
 
@@ -26,7 +55,9 @@
 
   <div class="wrapper">
     <header>
-        <img id="me" src="static/me_head0.png" onclick="setimage();"></img>
+        <div id="meRotate">
+          <img id="me" src="static/me_head0.png" onclick="setimage();"></img>
+        </div>
       <h1>Adam Verner</h1>
 
       <p>

@@ -26,7 +26,8 @@ h2, h1, h3{
   color: #909095;
 }
 
-#me{  height: 250px;
+#me{
+  height: 250px;
   margin: 0px;
   width: auto;
   transition: transform .2s ease-in-out;
@@ -36,13 +37,13 @@ h2, h1, h3{
 }
 
 #me:hover{
+  transition: transform .2s ease-in-out;
   transform: scale(1.15);
 }
 
-#me:active{
-  animation:rotate .2s linear both;
+#meRotate{
+    display: inline-block;
 }
-@keyframes rotate{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
 
 a {
   text-decoration: none;
