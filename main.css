@@ -22,8 +22,25 @@ body::after{
    content: url(static/me_head1.png) url(static/me_head2.png) url(static/me_head3.png);
 }
 
+p{
+  margin: 1em;
+}
+
 h2, h1, h3{
   color: #909095;
+  white-space: nowrap;
+}
+
+h1{
+  font-size: 1.7em;
+}
+
+h2{
+  font-size: 1.5em;
+}
+
+h3{
+  font-size: 1.3em;
 }
 
 #me{
